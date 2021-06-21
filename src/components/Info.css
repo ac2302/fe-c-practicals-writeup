@@ -1,0 +1,33 @@
+.page-container {
+    margin: 3vh;
+    border: 3px solid black;
+    height: 94vh;
+}
+
+.info-container {
+    margin: 10px;
+    padding: 10px;
+
+    position: absolute;
+    bottom: 3vh;
+    right: 3vh;
+
+    border: 1px solid black;
+    width: fit-content;
+}
+
+.src-info {
+    text-align: center;
+    color: darkgray;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 100px;
+}
+
+p {
+    font-size: 21px;
+}
