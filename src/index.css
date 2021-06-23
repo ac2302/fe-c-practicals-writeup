@@ -1,14 +1,25 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 img {
-    page-break-inside: avoid;
+	page-break-inside: avoid;
 }
 
 .page {
-    page-break-before: always;
-    page-break-after: always;
+	page-break-before: always;
+	page-break-after: always;
+}
+
+h1 {
+	font-size: 50px;
+	text-align: center;
+	margin: 100px;
+}
+
+p,
+pre {
+	font-size: 21px;
 }
