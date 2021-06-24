@@ -24,6 +24,19 @@ function Practicals() {
 						</>
 					)}
 
+					{/* images are conditional */}
+					{practical.images && (
+						<>
+							<h2>Images:</h2>
+							{practical.images.map((image) => (
+								<div className="image-container">
+									<img src={image.uri} />
+									<p>{image.caption}</p>
+								</div>
+							))}
+						</>
+					)}
+
 					<h2>Conclusion:</h2>
 					<p>{practical.conclusion}</p>
 				</div>
