@@ -5,7 +5,15 @@ const practicals = [
 		aim: "Write an algorithm and draw flowchart:To add any 2 numbers",
 		theory:
 			"An algorithm is a way to represent the steps nessecary to solve a problem. It is not language specific. Flowcharts are a way to visualise the flow of a program",
-		images: [{ uri: "/img/p1/flow.png", caption: "flowchart to add 2 numbers" }],
+		code: `Algorithm:
+		step 1	initialize variables a b and sum
+step2	input a from user
+step3	input b from user
+step4	sum <- a + b
+step5	output sum to terminal`,
+		images: [
+			{ uri: "/img/p1/flow.png", caption: "flowchart to add 2 numbers" },
+		],
 		conclusion:
 			"I learned how to write an algorithm to add 2 numbers and to draw a flowchart to represent the flow of the program",
 	},
