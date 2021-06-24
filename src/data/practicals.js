@@ -6,7 +6,7 @@ const practicals = [
 		theory:
 			"An algorithm is a way to represent the steps nessecary to solve a problem. It is not language specific. Flowcharts are a way to visualise the flow of a program",
 		code: `Algorithm:
-		step 1	initialize variables a b and sum
+step 1	initialize variables a b and sum
 step2	input a from user
 step3	input b from user
 step4	sum <- a + b
