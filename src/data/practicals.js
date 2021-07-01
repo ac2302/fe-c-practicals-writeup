@@ -326,6 +326,138 @@ int main()
 		conclusion: "I learned how to calculate lcm and gcd in C",
 	},
 
+	// practical 10
+	{
+		number: 10,
+		aim: "Write a C program for binary search and to find out the position of the number.",
+		theory:
+			"Binary search is a searching algorithm to search for an element in a sorted list. It has log n time complexity where n is the number of elenents in the list.",
+		code: `#include <stdio.h>
+
+int bins(int *arr, int search, int start, int end)
+{
+	int index;
+	int mid = (start + end) / 2;
+	
+	if (arr[mid] == search)
+		return mid;
+
+	if (arr[mid] > search)
+	{
+		index = bins(arr, search, start, mid);
+		if (index != -1)
+			return index;
+	}
+
+	if (arr[mid] < search)
+	{
+		index = bins(arr, search, mid, end);
+		if (index != -1)
+			return index;
+	}
+		
+
+	return -1;
+}
+
+int main()
+{
+	int len;
+	printf("enter number of elements: ");
+	scanf("%d", &len);
+
+	int arr[len], search, index;
+	
+	printf("enter %d numbers:\\n", len);
+	for (int i = 0; i < len; i++)
+		scanf("%d", arr+i);
+
+	printf("enter number to search for: ");
+	scanf("%d", &search);
+
+	index = bins(arr, search, 0, len);
+
+	if (index != -1)
+		printf("%d found at index %d\\n", search, index);
+	else
+		printf("%d not found\\n", search);
+
+	return 0;
+}
+
+`,
+		images: [
+			{ uri: "/img/p10/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p10/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned to recurcively implement binary search in C",
+	},
+
+	// practical 11
+	{
+		number: 11,
+		aim: "Write a C program to addition 3*3 matrix and find the transpose of it.",
+		theory:
+			"Matrices in C can easily be represented with 2d arrays in C. This allows us to perform operations on them.",
+		code: `#include <stdio.h>
+
+int main()
+{
+	int m1[3][3], m2[3][3], sum[3][3], trans[3][3];
+
+	// input matrix 1
+	printf("enter the elements of the first matrix\\n");
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			scanf("%d", &m1[i][j]);
+	
+	//input matrix 2
+	printf("enter the elements of the second matrix\\n");
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			scanf("%d", &m2[i][j]);
+
+	//calculating sum
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			sum[i][j] = m1[i][j] + m2[i][j];
+	
+	//calculating transpose of sum
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			trans[i][j] = sum[j][i];
+
+	// display sum
+	printf("the sum of the matrices is\\n");
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			printf("%8d", sum[i][j]);
+		printf("\\n");
+	}
+
+	// display transpose of sum
+	printf("the transpose of sum of the matrices is\\n");
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			printf("%8d", trans[i][j]);
+		printf("\\n");
+	}
+	
+
+	return 0;
+}
+`,
+		images: [
+			{ uri: "/img/p11/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p11/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to work with 2d arrays in C",
+	},
+
 	// practical 14
 	{
 		number: 14,
