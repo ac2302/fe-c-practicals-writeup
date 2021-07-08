@@ -5,7 +5,6 @@ function Info() {
     return (
         <div className="page page-container">
             <h1>C Programming Practical Journal</h1>
-
             <p className="src-info">
                 Source Code used to generate this is available at
                 https://github.com/ac2302/fe-c-practicals-writeup

@@ -458,6 +458,102 @@ int main()
 		conclusion: "I learned how to work with 2d arrays in C",
 	},
 
+	// practical 12
+	{
+		number: 12,
+		aim: "Write a program to check whether entered string is a palindrome or not.(Without Built-in Functions)",
+		theory:
+			"A palindrome is a word that is the same forwards and backwards. Examples of palindromes include mom and madam",
+		code: `#include <stdio.h>
+#include <stdbool.h>
+
+#define LEN 512
+
+int mystrlen(char *str) {
+    int len = 0;
+
+    for (int i = 0; str[i] != '\\0'; i++)
+        len++;
+
+    return len;
+}
+
+bool isPan(char *str) {
+    int len = mystrlen(str);
+
+    for (int i = 0; i < len; i++)
+        if (str[i] != str[len - 1 - i])
+            return false;
+
+    return true;
+}
+
+int main()
+{
+    char str[LEN];
+    printf("enter a string\\n");
+    scanf("%s", str);
+
+    if (isPan(str))
+        printf("the string is a panindrome\\n");
+    else
+        printf("the string is not a panindrome\\n");
+
+    return 0;
+}`,
+		images: [
+			{ uri: "/img/p12/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p12/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to use strings in C",
+	},
+
+	// practical 13
+	{
+		number: 13,
+		aim: "Write a C program for inbuilt string functions [strlen(),strcat(),strcpy(),strcmp()]",
+		theory:
+			"strlen() is used to find length of string. strcat() is used to concatenate 2 strings. strcpy() copies one string into another, strcmp() lexiographically compares two strings",
+		code: `#include <stdio.h>
+#include <string.h>
+
+#define LEN 1024
+
+int main()
+{
+    char s1[LEN], s2[LEN];
+
+    printf("enter a string:\\n");
+    scanf("%s", s1);
+
+    // strlen
+    printf("the entered string is %d characters long\\n", strlen(s1));
+
+    // strcpy
+    strcpy(s2, s1);
+    printf("the string was copied. the copy is\\n%s\\n", s2);
+
+    //strcat
+    printf("the concatination of string and it's copy is\\n%s\\n", strcat(s2, s1));
+
+    // strcmp
+    if (strcmp(s1, "hello") == 0)
+        printf("the string is hello\\n");
+    else
+        printf("the string is not hello\\n");
+    
+    return 0;
+}`,
+		images: [
+			{ uri: "/img/p13/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p13/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion:
+			"I learned how to use library functions in order to deal with strings in C.",
+	},
+
 	// practical 14
 	{
 		number: 14,
