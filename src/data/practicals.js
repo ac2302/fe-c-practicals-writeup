@@ -585,6 +585,70 @@ int main()
 
 		conclusion: "I learned recursion in C",
 	},
+	// practical 15
+	{
+		number: 15,
+		aim: "Write a C program to implement bubble sort(Using Function-By passing Parameters)",
+		theory:
+			"Bubble Sort is a sorting algorithm sed to sort a list in ascending or descending order. It is one of the simplest sorting algorithms. It is implemented by swapping two consecutive items if they are not in order for every two consecutive items. This is done multiple times until the entire list is sorted",
+		code: `#include <stdio.h>
+
+void bubblesort(int arr[], int len)
+{
+	int temp;
+	int swaps = 1; // any non-zero value will do
+	/*
+	 * the swaps variable will keep track of number of
+	 * times, elements were swapped in a rin-through
+	 * if none of the variables are swapped, we can exit early.
+	 * this will allow the program to finish earlier
+	 * it will optimise the sorting of almost sorted arrays
+	 * */
+	for (int i = len - 1; (i > 0) && (swaps != 0); i--)
+	{
+		swaps = 0;
+		for (int j = 0; j < i; j++)
+			if (arr[j] > arr[j + 1])
+			{
+				swaps++;
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+	}
+}
+
+int main()
+{
+	int n;
+	printf("enter the number of elements: ");
+	scanf("%d", &n);
+
+	int arr[n];
+
+	// input array
+	printf("enter the elements of the array:\\n");
+	for (int i = 0; i < n; i++)
+		scanf("%d", &arr[i]);
+
+	// sort it
+	bubblesort(arr, n);
+
+	// display sorted
+	printf("the sorted array is:\\n");
+	for (int i = 0; i < n; i++)
+		printf("%d\\n", arr[i]);
+
+	return 0;
+}
+`,
+		images: [
+			{ uri: "/img/p15/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p15/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to implement bubble-sort in C",
+	},
 	// practical 16
 	{
 		number: 16,
@@ -604,10 +668,10 @@ int myPow(int x, int y)
 int main()
 {
     int x, y;
-    printf("enter 2 numbers\n");
+    printf("enter 2 numbers\\n");
     scanf("%d %d", &x, &y);
 
-    printf("%d ^ %d = %d\n", x, y, myPow(x, y));
+    printf("%d ^ %d = %d\\n", x, y, myPow(x, y));
 
     return 0;
 }`,
@@ -616,7 +680,144 @@ int main()
 			{ uri: "/img/p16/output.png", caption: "screenshot of output" },
 		],
 
-		conclusion: "I learned abut recursion in C",
+		conclusion: "I learned about recursion in C",
+	},
+	// practical 17
+	{
+		number: 17,
+		aim: "Write a program to define structured called Student with following members a)Name b)Roll_No c)DOB(date of birth) Write a program to read and display information of n students",
+		theory:
+			"A structure is a user-defined datatype in C. It can contain various variables of different datatypes. The size of the stricture is equal to the sum of sizes of it's elements.",
+		code: `#include <stdio.h>
+#include <stdlib.h>
+
+struct Date
+{
+	int day;
+	int month;
+	int year;
+};
+
+struct Student
+{
+	char name[50];
+	int rollNo;
+	struct Date dob;
+};
+
+int main()
+{
+	int n;
+	printf("enter the number of students: ");
+	scanf("%d", &n);
+
+	struct Student students[n];
+
+	// taking input
+	for (int i = 0; i < n; i++)
+	{
+		printf("enter details for student %d\\n", i + 1);
+		printf("enter the student's name: ");
+		scanf("%s", students[i].name);
+		printf("ente the student's roll no.: ");
+		scanf("%d", &students[i].rollNo);
+		printf("ente the student's dob in dd mm yy format: ");
+		scanf("%d %d %d", &students[i].dob.day, &students[i].dob.month, &students[i].dob.year);
+	}
+
+	printf("displaying info\\n");
+	for (int i = 0; i < n; i++)
+	{
+		printf("student %d:\\n", i + 1);
+		printf("name: %s\\n", students[i].name);
+		printf("roll no.: %d\\n", students[i].rollNo);
+		printf("dob: %d/%d/%d\\n", students[i].dob.day, students[i].dob.month, students[i].dob.year);
+	}
+
+	return 0;
+}
+`,
+		images: [
+			{ uri: "/img/p17/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p17/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to use structures in C",
+	},
+	// practical 18
+	{
+		number: 18,
+		aim: "Write a C program to display information of n employees using Union.",
+		theory:
+			"A union is a user-defined datatype in C. It can contain various variables of different datatypes. The size of the union is equal to size of it's largest element.",
+		code: `#include <stdio.h>
+#include <string.h>
+
+union employeeU
+{
+	char name[32];
+	int id;
+	/*
+	 * salary is stored in int as paise not rupees
+	 * storing salary in floar or double my cause rounding errors.
+	 * */
+	int salary;
+};
+
+struct employeeS
+{
+	char name[32];
+	int id;
+	/*
+	 * salary is stored in int as paise not rupees
+	 * storing salary in floar or double my cause rounding errors.
+	 * */
+	int salary;
+};
+
+int main()
+{
+	int n;
+	printf("enter the number of employees: ");
+	scanf("%d", &n);
+
+	union employeeU empUnion[n];
+	struct employeeS empStruct[n];
+
+	// taking input
+	for (int i = 0; i < n; i++)
+	{
+		printf("\\nenter details for employee %d:-\\n", i + 1);
+		printf("enter the name: ");
+		scanf("%s", empUnion[i].name);
+		strcpy(empStruct[i].name, empUnion[i].name);
+		printf("enter the employee id: ");
+		scanf("%d", &empUnion[i].id);
+		empStruct[i].id = empUnion[i].id;
+		printf("enter the employee salary in paise: ");
+		scanf("%d", &empUnion[i].salary);
+		empStruct[i].salary = empUnion[i].salary;
+	}
+
+	// output employee info
+	printf("\\ndisplaying info\\n");
+	for (int i = 0; i < n; i++)
+	{
+		printf("\\ndetails for employee %d:-\\n", i + 1);
+		printf("name: %s\\n", empStruct[i].name);
+		printf("id: %d\\n", empStruct[i].id);
+		printf("salary in paise: %d\\n", empStruct[i].salary);
+	}
+
+	return 0;
+}
+`,
+		images: [
+			{ uri: "/img/p18/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p18/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to use unions in C",
 	},
 ];
 
