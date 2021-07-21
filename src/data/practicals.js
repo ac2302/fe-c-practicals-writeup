@@ -2,6 +2,7 @@ const practicals = [
 	// practical 1
 	{
 		number: 1,
+		date: "04/06/2021",
 		aim: "Write an algorithm and draw flowchart:To add any 2 numbers",
 		theory:
 			"An algorithm is a way to represent the steps nessecary to solve a problem. It is not language specific. Flowcharts are a way to visualise the flow of a program",
@@ -20,6 +21,7 @@ step5	output sum to terminal`,
 	// practical 2
 	{
 		number: 2,
+		date: "04/06/2021",
 		aim: "Write a C program to find areas of triangle(Hint : Given 3 Sides)..",
 		theory:
 			"s = ((a + b + c) / 2)\\narea = sqrt(s * (s - a) * (s - b) * (s - c) )",
@@ -47,6 +49,7 @@ int main() {
 	// practical 3
 	{
 		number: 3,
+		date: "04/06/2021",
 		aim: "Write a C program to find the length of a straight line formed by two endpoints, whose coordinates would be given as inputs.",
 		theory: "distance = sqrt((x1 – x2)^2 + (y1 – y2)^2)",
 		code: `#include <stdio.h>
@@ -76,6 +79,7 @@ int main() {
 	// practical 4
 	{
 		number: 4,
+		date: "04/06/2021",
 		aim: "Write Program To display the result of a student",
 		theory: `a) Read marks for 3 subjects(SUB1,SUB2 and SUB3)
 b) Calculate percentage of marks(P) c) If percentage(P) &gt;=70 then
@@ -119,6 +123,7 @@ int main() {
 	// practical 5
 	{
 		number: 5,
+		date: "04/06/2021",
 		aim: "Write a C program for Switch statement to perform all arithmetic operations. (+,-,/,*)",
 		theory:
 			"A switch statement can be used to alter control flow by checking for equality of int and char types with constant ime complexity",
@@ -163,6 +168,7 @@ int main() {
 	// practical 6
 	{
 		number: 6,
+		date: "04/06/2021",
 		aim: "Write a C program to find out the Fibonacci series of given number entered by user.(Use : For Loop)",
 		theory:
 			"Every number in the fibonnachi series is the sum of the previoous two numbers. The starting 2 numbers are usuallu 1 and 1 or 0 and 1",
@@ -194,6 +200,7 @@ int main() {
 	// practical 7
 	{
 		number: 7,
+		date: "07/06/2021",
 		aim: "Write a C program to find the Armstrong numbers in the entered range(Use : While Loop)",
 		theory:
 			"A number is an armstrong number if and only if the sum of the nth power of every digit is equal to the number itself where n is the number of digits in the number",
@@ -256,6 +263,7 @@ int main()
 	// practical 8
 	{
 		number: 8,
+		date: "07/06/2021",
 		aim: `Write a C program to display the following pattern up to n terms ABCD\\nABC\\nAB\\nA`,
 		theory:
 			"patterns like the one above can be achieved in c with the help of nested loops and character addition",
@@ -289,6 +297,7 @@ int main()
 	// practical 9
 	{
 		number: 9,
+		date: "07/06/2021",
 		aim: "Write a program to find GCD and LCM of any 2 numbers(Do-While)",
 		theory:
 			"LCM is the least common multiple of 2 numbers and GCH is the greatest common dividend of the number",
@@ -329,6 +338,7 @@ int main()
 	// practical 10
 	{
 		number: 10,
+		date: "25/06/2021",
 		aim: "Write a C program for binary search and to find out the position of the number.",
 		theory:
 			"Binary search is a searching algorithm to search for an element in a sorted list. It has log n time complexity where n is the number of elenents in the list.",
@@ -397,6 +407,7 @@ int main()
 	// practical 11
 	{
 		number: 11,
+		date: "25/06/2021",
 		aim: "Write a C program to addition 3*3 matrix and find the transpose of it.",
 		theory:
 			"Matrices in C can easily be represented with 2d arrays in C. This allows us to perform operations on them.",
@@ -461,6 +472,7 @@ int main()
 	// practical 12
 	{
 		number: 12,
+		date: "02/07/2021",
 		aim: "Write a program to check whether entered string is a palindrome or not.(Without Built-in Functions)",
 		theory:
 			"A palindrome is a word that is the same forwards and backwards. Examples of palindromes include mom and madam",
@@ -512,6 +524,7 @@ int main()
 	// practical 13
 	{
 		number: 13,
+		date: "02/07/2021",
 		aim: "Write a C program for inbuilt string functions [strlen(),strcat(),strcpy(),strcmp()]",
 		theory:
 			"strlen() is used to find length of string. strcat() is used to concatenate 2 strings. strcpy() copies one string into another, strcmp() lexiographically compares two strings",
@@ -557,6 +570,7 @@ int main()
 	// practical 14
 	{
 		number: 14,
+		date: "19/06/2021",
 		aim: "Write a C program to find factorial of any number using function.",
 		theory: "x! = x * (x-1)! And 1! = 1",
 		code: `#include <stdio.h>
@@ -588,6 +602,7 @@ int main()
 	// practical 15
 	{
 		number: 15,
+		date: "09/07/2021",
 		aim: "Write a C program to implement bubble sort(Using Function-By passing Parameters)",
 		theory:
 			"Bubble Sort is a sorting algorithm sed to sort a list in ascending or descending order. It is one of the simplest sorting algorithms. It is implemented by swapping two consecutive items if they are not in order for every two consecutive items. This is done multiple times until the entire list is sorted",
@@ -652,6 +667,7 @@ int main()
 	// practical 16
 	{
 		number: 16,
+		date: "19/06/2021",
 		aim: "Write a recursive function to find X^Y.",
 		theory: "x^y = x * x^(y-1) and x^1 = x",
 		code: `#include <stdio.h>
@@ -685,6 +701,7 @@ int main()
 	// practical 17
 	{
 		number: 17,
+		date: "09/07/2021",
 		aim: "Write a program to define structured called Student with following members a)Name b)Roll_No c)DOB(date of birth) Write a program to read and display information of n students",
 		theory:
 			"A structure is a user-defined datatype in C. It can contain various variables of different datatypes. The size of the stricture is equal to the sum of sizes of it's elements.",
@@ -747,6 +764,7 @@ int main()
 	// practical 18
 	{
 		number: 18,
+		date: "09/07/2021",
 		aim: "Write a C program to display information of n employees using Union.",
 		theory:
 			"A union is a user-defined datatype in C. It can contain various variables of different datatypes. The size of the union is equal to size of it's largest element.",
@@ -822,6 +840,7 @@ int main()
 	// practical 19
 	{
 		number: 19,
+		date: "15/07/2021",
 		aim: "Write a C program to swap the elements using Pointer.",
 		theory:
 			"pointers are special variables that contain the address of variables. Instead of swapping the values of variables directly, we can use pointers to do it",
@@ -864,6 +883,7 @@ int main()
 	// practical 19
 	{
 		number: 20,
+		date: "15/07/2021",
 		aim: "Write a program in C to find the largest element using Dynamic Memory Allocation",
 		theory:
 			"normally, when you declare a variable in C, it is allocated in the stack. To prevent large stack frames that reduce the maximum recursion depth, we use dynamic memory allocation to ask the operating system to allocate heap memory for the program. the header file that contains the functions used is stdlib.h",
