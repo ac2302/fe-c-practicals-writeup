@@ -819,6 +819,99 @@ int main()
 
 		conclusion: "I learned how to use unions in C",
 	},
+	// practical 19
+	{
+		number: 19,
+		aim: "Write a C program to swap the elements using Pointer.",
+		theory:
+			"pointers are special variables that contain the address of variables. Instead of swapping the values of variables directly, we can use pointers to do it",
+		code: `#include <stdio.h>
+
+void swap(int* x, int* y)
+{
+	int t = *x;
+	*x = *y;
+	*y = t;
+}
+
+int main()
+{
+	int a, b;
+
+	printf("enter value of a: ");
+	scanf("%d", &a);
+
+	printf("enter value of b: ");
+	scanf("%d", &b);
+
+	printf("a = %d and b = %d\\n", a, b);
+
+	// swap
+	swap(&a, &b);
+
+	printf("a = %d and b = %d\\n", a, b);
+
+	return 0;
+}
+`,
+		images: [
+			{ uri: "/img/p19/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p19/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to swap variables using pointers",
+	},
+	// practical 19
+	{
+		number: 20,
+		aim: "Write a program in C to find the largest element using Dynamic Memory Allocation",
+		theory:
+			"normally, when you declare a variable in C, it is allocated in the stack. To prevent large stack frames that reduce the maximum recursion depth, we use dynamic memory allocation to ask the operating system to allocate heap memory for the program. the header file that contains the functions used is stdlib.h",
+		code: `#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int n, largest;
+	printf("enter the number of elements: ");
+	scanf("%d", &n);
+
+	// allocating memory
+	int *a = (int *) malloc(n * sizeof(int));
+
+	// checking if mwmory was allocated
+	if (a == NULL)
+	{
+		fprintf(stderr, "haha null ptr go brr...\\n");
+		return 1;
+	}
+
+	// taking input from user
+	printf("enter %d numbers:\\n", n);
+	for (int i = 0; i < n; i++)
+		scanf("%d", a + i);
+
+	// finding the largest
+	largest = a[0];
+	for (int i = 0; i < n; i++)
+		if (a[i] > largest)
+			largest = a[i];
+
+	// freeing the memory
+	free(a);
+
+	printf("the largest element is %d\\n", largest);
+
+	return 0;
+}
+`,
+		images: [
+			{ uri: "/img/p20/code.png", caption: "screenshot of code" },
+			{ uri: "/img/p20/output.png", caption: "screenshot of output" },
+		],
+
+		conclusion: "I learned how to use dynamic memory allocation in C",
+	},
 ];
 
 export default practicals;
